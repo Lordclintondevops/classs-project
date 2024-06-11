@@ -52,7 +52,7 @@ resource "aws_route_table" "lienge_peering" {
   vpc_id = aws_vpc.liengevpc[0].id
 
   route {
-    cidr_block                = aws_vpc.liengevpc[1].id
+    cidr_block                = aws_vpc.liengevpc[1].cidr_block
     vpc_peering_connection_id = aws_vpc_peering_connection.lienge_peering.id
   }
 
@@ -67,7 +67,7 @@ resource "aws_route_table" "lienge_peering01" {
   vpc_id = aws_vpc.liengevpc[1].id
 
   route {
-    cidr_block                = aws_vpc.liengevpc[0].id
+    cidr_block                = aws_vpc.liengevpc[0].cidr_block
     vpc_peering_connection_id = aws_vpc_peering_connection.lienge_peering.id
   }
 
@@ -82,7 +82,7 @@ resource "aws_route_table" "lienge_peering0" {
   vpc_id = aws_vpc.liengevpc[0].id
 
   route {
-    cidr_block                = aws_vpc.liengevpc[2].id
+    cidr_block                = aws_vpc.liengevpc[2].cidr_block
     vpc_peering_connection_id = aws_vpc_peering_connection.lienge_peering.id
   }
 
@@ -97,7 +97,7 @@ resource "aws_route_table" "lienge_peering1" {
   vpc_id = aws_vpc.liengevpc[2].id
 
   route {
-    cidr_block                = aws_vpc.liengevpc[0].id
+    cidr_block                = aws_vpc.liengevpc[0].cidr_block
     vpc_peering_connection_id = aws_vpc_peering_connection.lienge_peering1.id
   }
 

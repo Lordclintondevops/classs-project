@@ -5,7 +5,7 @@ terraform {
     bucket         = "lienge-group"
     key            = "key/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "liengedb"
+    # dynamodb_table = "liengedb"
   }
 
   required_providers {
