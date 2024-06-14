@@ -66,14 +66,12 @@ variable "azsubnet_priv" {
 
 variable "cidrsubnet_pub" {
   type    = list(string)
-  default = ["125.168.0.0/24", "125.168.1.0/24"]
-
+  default = ["125.168.0.0/24", "125.169.0.0/24"]
 }
 
 variable "cidrsubnet_priv" {
   type    = list(string)
   default = ["125.169.0.0/24", "125.169.1.0/24", "125.170.0.0/24", "125.170.1.0/24"]
-
 }
 
 variable "tagsub" {
