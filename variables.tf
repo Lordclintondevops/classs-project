@@ -1,6 +1,6 @@
 variable "region" {
   type    = list(string)
-  default = ["us-east-1", "us-east-2", "us-west-1"]
+  default = ["us-east-1"]
 
 }
 
