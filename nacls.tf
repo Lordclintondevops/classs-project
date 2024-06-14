@@ -66,9 +66,11 @@ resource "aws_network_acl_rule" "vpc2_outbound_rule" {
 resource "aws_network_acl_association" "nacl_vpc1_association" {
   subnet_id      = aws_subnet.liengesubpub[0].id
   network_acl_id = aws_network_acl.vpc1_nacl.id
+  depens_on      = [aws_subnet.liengesubpub[0], aws_network_acl.vpc1_nacl]
 }
 
 resource "aws_network_acl_association" "nacl_vpc2_association" {
   subnet_id      = aws_subnet.liengesubpriv[0].id
   network_acl_id = aws_network_acl.vpc2_nacl.id
+  depens_on      = [aws_subnet.liengesubpriv[0], aws_network_acl.vpc2_nacl]
 }
