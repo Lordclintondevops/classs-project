@@ -7,7 +7,7 @@ resource "aws_route_table" "liengert" {
   dynamic "route" {
     for_each = var.azsubnet_pub
     content {
-      cidr_block = var.igwcidr
+      cidr_block = "0.0.0.0/0"
       gateway_id = aws_internet_gateway.liengeigw.id
     }
 
