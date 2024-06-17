@@ -561,6 +561,13 @@ resource "aws_s3_bucket" "lienge-group1" {
 
 }
 
+# resource "aws_s3_bucket_object" "delete_objects" {
+#     bucket = "lienge-group1"
+#     key = "object_key_to_delete"
+#     force_destroy = true
+  
+# }
+
 # # Configuring ACL
 # resource "aws_s3_bucket_acl" "liengeacl" {
 #     bucket = var.bucket
