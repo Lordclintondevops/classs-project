@@ -507,6 +507,37 @@ locals {
 #   sg_count1  = length(aws_security_group.sg)
 # }
 
+# Creating S3 EndPoints
+
+resource "aws_vpc_endpoint" "s3_endpoint" {
+  count = length(aws_subnet.liengesubpub)
+  vpc_id       = aws_vpc.liengevpc[0].id
+  service_name = "com.amazonaws.${var.region}.s3"
+  vpc_endpoint_type = "Gateway"
+
+  policy = <<EOF
+{
+  "Statement": [
+    {
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*",
+      "Principal": "*"
+    }
+  ]    
+}
+EOF
+
+#   subnet_ids = [aws_subnet.liengesubpub.*.id[count.index]]
+#   dns_enabled = true
+#   dns_options {
+#     dns_records {
+#       type = "A"
+#     }
+#   }
+}
+
+
 # resource "aws_vpc_endpoint" "s3_endpoint" {
 #   count               = local.vpc_count1 > local.sg_count1 ? local.sg_count1 : local.vpc_count1
 #   vpc_id              = aws_vpc.liengevpc[count.index % local.vpc_count1].id
