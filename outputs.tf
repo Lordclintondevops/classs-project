@@ -1,26 +1,25 @@
-# # output "vpc_id" {
-# #   description = "The ID of the VPC"
-# #   value       = aws_vpc.liengevpc[*].id
+# output "vpc_id" {
+#   description = "The ID of the VPC"
+#   value       = aws_vpc.liengevpc[*].id
 
-# # }
+# }
 
-# # output "subnet_id" {
-# #   description = "The IDs of the Subnetts"
-# #   value       = aws_subnet.liengesubpub[*].id
+# output "subnet_id" {
+#   description = "The IDs of the Subnetts"
+#   value       = aws_subnet.liengesubpub[*].id
 
-# # }
+# }
 
-# # output "subnet_id1" {
-# #   description = "The IDs for Private"
-# #   value       = aws_subnet.liengesubpriv[*].id
+# output "subnet_id1" {
+#   description = "The IDs for Private"
+#   value       = aws_subnet.liengesubpriv[*].id
 
-# # }
+# }
 
-# # output "aws_security_group_id" {
-# #   description = "The ID of the security group"
-# #   value       = aws_security_group.sg[*]
+# output "aws_security_group_id" {
+#   description = "The ID of the security group"
+#   value       = aws_security_group.sg[*]
 
-<<<<<<< HEAD
 # }
 
 # output "s3_endpoint_id" {
@@ -110,11 +109,3 @@ output "vpc_flow_vpc_id" {
     value = module.vpc-flow-logs.vpc_flow_logs_vpc
   
 }
-=======
-# # }
-
-# output "s3_endpoint_id" {
-#     value = aws_vpc_endpoint.s3_endpoint.id
-  
-# }
->>>>>>> 35b6635 (updates made)
