@@ -15,6 +15,28 @@ module "vpc" {
 #   source = "./modules/vpc/subnets"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # }
 # Creating Subnets Public
 

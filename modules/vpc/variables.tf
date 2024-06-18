@@ -6,11 +6,7 @@ variable "region" {
 
 # VPC's Components
 
-variable "vpcname" {
-  type    = string
-  default = "liengevpc"
 
-}
 
 variable "cidrvpc" {
   type    = list(string)
@@ -19,7 +15,7 @@ variable "cidrvpc" {
 
 variable "vpctags" {
   type    = list(string)
-  default = ["transit", "database", "financial", "Pearl"]
+  default = ["transit", "database", "financial"]
 
 }
 
@@ -121,6 +117,11 @@ variable "sgingress" {
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
+    "443" = {
+      port  = 443
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
     "80" = {
       port        = 80
       protocol    = "tcp"
@@ -148,11 +149,13 @@ variable "sgegress" {
 
 }
 
-# variable "service_name" {
-#     type = string
-#     default = "com.amzonaws.us-east-1.s3"
+# Components of the Transit Gateway
+
+variable "tgwname" {
+  type = string
+  default = "liengetgw"
   
-# }
+}
 
 # EC2 Instance Components
 
@@ -179,3 +182,4 @@ variable "ec2tags1" {
   default = ["ec20", "ec21", "ec22", "ec23"]
 
 }
+
