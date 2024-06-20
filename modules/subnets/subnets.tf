@@ -47,14 +47,14 @@ resource "aws_subnet" "liengesubpriv" {
   }
 }
 
-resource "aws_subnet" "liengesubpriv1" {
-  count                   = length(var.azsubnet_priv1)
-  vpc_id                  = aws_vpc.liengevpc[2].id
-  cidr_block              = local.subnet_cidr_blocks_priv11[count.index]
-  availability_zone       = var.azsubnet_priv1[count.index]
-  map_public_ip_on_launch = false
+# resource "aws_subnet" "liengesubpriv1" {
+#   count                   = length(var.azsubnet_priv1)
+#   vpc_id                  = aws_vpc.liengevpc[2].id
+#   cidr_block              = local.subnet_cidr_blocks_priv11[count.index]
+#   availability_zone       = var.azsubnet_priv1[count.index]
+#   map_public_ip_on_launch = false
 
-  tags = {
-    Name = "${var.tagsub1[count.index]}"
-  }
-}
+#   tags = {
+#     Name = "${var.tagsub1[count.index]}"
+#   }
+# }

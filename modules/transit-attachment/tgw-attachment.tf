@@ -27,17 +27,17 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_attachment_vpc2" {
   }
 }
 
-resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_attachment_vpc3" {
-  transit_gateway_id = aws_ec2_transit_gateway.tgw.id
-  vpc_id             = aws_vpc.liengevpc[2].id  # VPC3
+# resource "aws_ec2_transit_gateway_vpc_attachment" "tgw_attachment_vpc3" {
+#   transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+#   vpc_id             = aws_vpc.liengevpc[2].id  # VPC3
 
-  subnet_ids = [
-    aws_subnet.liengesubpriv1[0].id,             # Private subnet 1 of VPC3
-    aws_subnet.liengesubpriv1[1].id              # Private subnet 2 of VPC3
-  ]
+#   subnet_ids = [
+#     aws_subnet.liengesubpriv1[0].id,             # Private subnet 1 of VPC3
+#     aws_subnet.liengesubpriv1[1].id              # Private subnet 2 of VPC3
+#   ]
 
-  tags = {
-    Name = "TGW-Attachment-VPC3"
-  }
-}
+#   tags = {
+#     Name = "TGW-Attachment-VPC3"
+#   }
+# }
 

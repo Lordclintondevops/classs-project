@@ -1,7 +1,7 @@
 # Creating a Security Group
 
 resource "aws_security_group" "sg" {
-  count  = length(var.azsubnet_priv0)
+  count  = length(var.azsubnet_pub)
   vpc_id = aws_vpc.liengevpc[count.index % length(aws_vpc.liengevpc)].id
 
   dynamic "ingress" {
@@ -32,7 +32,7 @@ resource "aws_security_group" "sg1" {
   vpc_id = aws_vpc.liengevpc[1].id
 
   dynamic "ingress" {
-    for_each = var.sgingress
+    for_each = var.sgingress1
     content {
       to_port     = ingress.value.port
       from_port   = ingress.value.port
@@ -42,7 +42,7 @@ resource "aws_security_group" "sg1" {
   }
 
   dynamic "egress" {
-    for_each = var.sgegress
+    for_each = var.sgegress1
     content {
       to_port     = egress.value.port
       from_port   = egress.value.port

@@ -16,6 +16,11 @@ variable "db" {
 
 }
 
+variable "subnet_id" {
+  type = string
+  
+}
+
 # variable "vpcname" {
 #   type    = string
 #   default = "liengevpc"
@@ -49,6 +54,17 @@ variable "tenancy" {
   type    = string
   default = "default"
 
+}
+
+variable "pub" {
+  type = string
+  default = "aws_subnet.liengesubpub"
+  
+}
+
+variable "sg" {
+  default = "aws_security_group.sg"
+  
 }
 
 # variable "igwcidr" {

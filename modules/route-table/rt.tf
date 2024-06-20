@@ -42,29 +42,29 @@ resource "aws_route_table" "liengert_private" {
 
 }
 
-resource "aws_route" "s3_route_vpc" {
-  count                   = length(aws_subnet.liengesubpriv)
-  route_table_id          = aws_route_table.liengert_private[count.index].id
-  destination_cidr_block  = var.cidrvpc[1]  # or specific CIDR block for S3 if desired
-  vpc_endpoint_id         = aws_vpc_endpoint.s3_endpoint[count.index].id
-  depends_on = [aws_vpc_endpoint.s3_endpoint]
-}
+# resource "aws_route" "s3_route_vpc" {
+#   count                   = length(aws_subnet.liengesubpriv)
+#   route_table_id          = aws_route_table.liengert_private[count.index].id
+#   destination_cidr_block  = var.cidrvpc[1]  
+#   vpc_endpoint_id         = aws_vpc_endpoint.s3_endpoint[count.index].id
+#   depends_on = [aws_vpc_endpoint.s3_endpoint]
+# }
 
-resource "aws_route_table" "liengert_private1" {
-  count  = length(var.azsubnet_priv1)
-  vpc_id = aws_vpc.liengevpc[2].id
+# resource "aws_route_table" "liengert_private1" {
+#   count  = length(var.azsubnet_priv1)
+#   vpc_id = aws_vpc.liengevpc[2].id
 
 
-  tags = {
-    Name = "liengert2"
-  }
-}
+#   tags = {
+#     Name = "liengert2"
+#   }
+# }
 
-resource "aws_route" "s3_route_vpc2" {
-  count                   = length(aws_subnet.liengesubpriv)
-  route_table_id          = aws_route_table.liengert_private1[count.index].id
-  destination_cidr_block  = var.cidrvpc[2]  # or specific CIDR block for S3 if desired
-  vpc_endpoint_id         = aws_vpc_endpoint.s3_endpoint[count.index].id
-  depends_on = [aws_vpc_endpoint.s3_endpoint]
-}
+# resource "aws_route" "s3_route_vpc2" {
+#   count                   = length(aws_subnet.liengesubpriv)
+#   route_table_id          = aws_route_table.liengert_private1[count.index].id
+#   destination_cidr_block  = var.cidrvpc[2]  # or specific CIDR block for S3 if desired
+#   vpc_endpoint_id         = aws_vpc_endpoint.s3_endpoint[count.index].id
+#   depends_on = [aws_vpc_endpoint.s3_endpoint]
+# }
 

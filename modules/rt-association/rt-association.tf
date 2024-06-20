@@ -14,9 +14,9 @@ resource "aws_route_table_association" "liengerta1" {
 
 }
 
-resource "aws_route_table_association" "liengerta2" {
-  count          = length(var.azsubnet_priv1)
-  route_table_id = aws_route_table.liengert_private1[0].id
-  subnet_id      = aws_subnet.liengesubpriv1[count.index].id
+# resource "aws_route_table_association" "liengerta2" {
+#   count          = length(var.azsubnet_priv1)
+#   route_table_id = aws_route_table.liengert_private1[0].id
+#   subnet_id      = aws_subnet.liengesubpriv1[count.index].id
 
-}
+# }
